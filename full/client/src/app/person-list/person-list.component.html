@@ -1,0 +1,10 @@
+<h2>Person List</h2>
+<div *ngFor='let p of person'>
+    <h3>
+       <a [routerLink]="['/person-edit',p.id]">{{p.name}} </a>
+       <!-- {{p.name}}  -->
+    </h3>
+</div>
+<div>
+    <button [routerLink]="['/person-add/']">add</button>
+</div>

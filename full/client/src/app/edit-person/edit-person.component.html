@@ -1,0 +1,19 @@
+<h1>Works</h1>
+<form #personForm="ngForm" (ngSubmit)="save(personForm.value)">
+    <!-- <h2>Edit person</h2> -->
+    <div>
+        <h3>{{person.name ? 'edit':'add'}} Person</h3>
+    </div>
+    <div>
+        <input type="text" name="href" [(ngModel)]="person.href">
+    </div>
+    <div>
+        <!-- <label>id</label>
+        <input placeholder="person.id" [(ngModel)]="person.id" required id="id" #id> -->
+        <label>name</label>
+        <input placeholder="person.name" [(ngModel)]="person.name" required name="name" #name>
+    </div>
+    <button type="submit" (click)=save(personForm.value)>Save</button>
+    <button (click)="remove(person.href)" *ngIf="person.href" type="button">delete</button>
+    <a routerLink="/person-list">Cancel</a>
+</form>
